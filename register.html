@@ -37,23 +37,31 @@
 							<h1>Sign Up</h1>
 							<p>Please fill in this form to create an account.</p>
 							<hr>
-							<label for="email"><b>Email</b></label>
-							<input type="text" placeholder="Enter Email" name="email" required>
+							<form class="pure-form">
+								<fieldset>
+									<input type = "text" placeholder ="Enter Email" id="email" required>
+								</br>
+									<input type="password" placeholder="Enter Password" id="password" required>
+								</br>
+									<input type="password" placeholder="Confirm Password" id="confirm_password" required>
+								</br>
+									<button type="submit" class="pure-button pure-button-primary">Confirm</button>
+								</fieldset>
+							</form>
+							<script type="text/javascript">
+								var password = document.getElementById("password")
+								, confirm_password = document.getElementById("confirm_password");
 
-							<label for="psw"><b>Password</b></label>
-							<input type="password" placeholder="Enter Password" name="psw" required>
-
-							<label for="psw-repeat"><b>Repeat Password</b></label>
-							<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-							<label>
-								<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-							</label>
-
-							<div class="clearfix">
-								<button type="button" class="cancelbtn">Cancel</button>
-								<button type="submit" class="signupbtn">Sign Up</button>
-							</div>
+								function validatePassword(){
+									if(password.value != confirm_password.value) {
+										confirm_password.setCustomValidity("Passwords Don't Match");
+									} else {
+										confirm_password.setCustomValidity('');
+									}
+								}
+								password.onchange = validatePassword;
+								confirm_password.onkeyup = validatePassword;
+							</script>
 					</form>
 				</div>
 			</section>
@@ -76,6 +84,5 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
