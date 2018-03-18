@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2018 at 05:39 AM
+-- Generation Time: Mar 18, 2018 at 10:02 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -25,6 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `jobID` int(11) NOT NULL,
+  `jobName` varchar(255) NOT NULL,
+  `jobDetails` varchar(255) NOT NULL,
+  `jobClientName` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`jobID`, `jobName`, `jobDetails`, `jobClientName`, `address`) VALUES
+(1, 'test', 'test', 'test', 'test');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -40,6 +61,12 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`jobID`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -48,6 +75,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `jobID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
