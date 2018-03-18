@@ -7,7 +7,7 @@ $password =  $_POST['password'];
 $cspassword = $_POST['cspassword'];
 
 if ($password == $cspassword){
-	$sql = "INSERT INTO `user` (`ID`, `username`, `email`, `password`)  VALUES (NULL, '$username', '$email', '$password')";
+	$sql = "INSERT INTO `user` (`userID`, `username`, `email`, `password`)  VALUES (NULL, '$username', '$email', '$password')";
 	mysqli_query($conn, $sql);
 	header( "refresh:0.5;url=../index.html" );
 	echo ("<script>alert('Signed up successfully!')</script>");
