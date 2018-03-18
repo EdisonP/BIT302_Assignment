@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2018 at 10:02 AM
+-- Generation Time: Mar 18, 2018 at 11:30 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -33,15 +33,16 @@ CREATE TABLE `jobs` (
   `jobName` varchar(255) NOT NULL,
   `jobDetails` varchar(255) NOT NULL,
   `jobClientName` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL
+  `address` varchar(255) NOT NULL,
+  `salary` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`jobID`, `jobName`, `jobDetails`, `jobClientName`, `address`) VALUES
-(1, 'test', 'test', 'test', 'test');
+INSERT INTO `jobs` (`jobID`, `jobName`, `jobDetails`, `jobClientName`, `address`, `salary`) VALUES
+(1, 'Sell my watermelons', 'Sell my watermelons from 9am-5pm on weekdays', 'John Smith', '123,Jinjang Street', 'RM 696');
 
 -- --------------------------------------------------------
 
@@ -55,6 +56,13 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `email`, `password`) VALUES
+(1, 'asd', 'asd@asd.com', 'asd');
 
 --
 -- Indexes for dumped tables
@@ -86,7 +94,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
