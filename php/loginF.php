@@ -1,6 +1,5 @@
 <?php
 include 'DBConfig.php';
-
 $email = $_POST['email'];
 $password =  $_POST['password'];
 

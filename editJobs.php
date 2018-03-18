@@ -39,8 +39,8 @@
 		<!-- Main -->
 			<section id="main">
 				<div class="inner">
-					<a href="listJobs.php" class="button">Add job</a>
-					<a href="editJobs.php" class="button">Delete job</a>
+					<a href="addJobs.html" class="button">Add job</a>
+					<a href="deleteJobs.html" class="button">Delete job</a>
 				</div>
 			</section>
 
