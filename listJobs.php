@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Binary by TEMPLATED
 	templated.co @templatedco
@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Login Page</title>
+		<title>Jinjang Utara Community</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -39,16 +39,13 @@
 		<!-- Main -->
 			<section id="main">
 				<div class="inner">
-					<form action = "php/loginF.php" method = "POST">
+					<header>
+						<h1>List of jobs</h1>
+					</header>
 
-            			<label class="col-md-3">E-mail</label>
-            			<input class="inp col-md-8" type="email" name="email" placeholder="E-mail" required>
-          				<br>
-            			<label class="col-md-3">Password</label>
-            			<input class="inp col-md-8" type="password" name="password" placeholder="Password" required>
-            			<br>
-            			<input type="submit" name="submit" value="LOGIN" />
-					</form>
+					<?php include 'php/listJobF.php';?>
+
+					
 				</div>
 			</section>
 
@@ -70,5 +67,6 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
