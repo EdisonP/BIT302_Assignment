@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2018 at 04:30 PM
+-- Generation Time: Mar 18, 2018 at 04:36 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -35,7 +35,7 @@ CREATE TABLE `jobs` (
   `jobClientName` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `salary` varchar(255) NOT NULL,
-  `jobStatus` varchar(255) NOT NULL
+  `jobStatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -43,7 +43,9 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`jobID`, `jobName`, `jobDetails`, `jobClientName`, `address`, `salary`, `jobStatus`) VALUES
-(1, 'test', 'test', 'test', 'test', 'RM100', 'Not taken');
+(1, 'test', 'test', 'test', 'test', 'RM100', 0),
+(3, 'asd', 'asd', 'asd', 'asd', 'RM200', 0),
+(4, 'test2', 'test2', 'test2', 'test2', 'RM422', 0);
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `jobID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `jobID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`

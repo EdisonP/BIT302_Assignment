@@ -5,8 +5,9 @@ $jobName = $_POST['jobName'];
 $jobDetails =  $_POST['jobDetails'];
 $address = $_POST['address'];
 $salary = $_POST['salary'];
+$jobStatus = FALSE;
 
-$sql = "INSERT INTO `jobs` (`jobID`, `jobClientName`, `jobName`, `jobDetails`, `address`, `salary`, `jobStatus`)  VALUES (NULL, '$jobClientName', '$jobName', '$jobDetails', '$address', '$salary', "Not taken")";
+$sql = "INSERT INTO `jobs` (`jobID`, `jobClientName`, `jobName`, `jobDetails`, `address`, `salary`, `jobStatus`)  VALUES (NULL, '$jobClientName', '$jobName', '$jobDetails', '$address', '$salary', '$jobStatus')";
 mysqli_query($conn, $sql);
 header( "refresh:0.5;url=../jobs.html" );
 echo ("<script>alert('Added new job successfully!')</script>");
