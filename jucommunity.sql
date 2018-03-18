@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2018 at 11:30 AM
+-- Generation Time: Mar 18, 2018 at 04:30 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -34,15 +34,16 @@ CREATE TABLE `jobs` (
   `jobDetails` varchar(255) NOT NULL,
   `jobClientName` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `salary` varchar(255) NOT NULL
+  `salary` varchar(255) NOT NULL,
+  `jobStatus` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`jobID`, `jobName`, `jobDetails`, `jobClientName`, `address`, `salary`) VALUES
-(1, 'Sell my watermelons', 'Sell my watermelons from 9am-5pm on weekdays', 'John Smith', '123,Jinjang Street', 'RM 696');
+INSERT INTO `jobs` (`jobID`, `jobName`, `jobDetails`, `jobClientName`, `address`, `salary`, `jobStatus`) VALUES
+(1, 'test', 'test', 'test', 'test', 'RM100', 'Not taken');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `jobID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `jobID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
