@@ -17,19 +17,42 @@
 	</header>
 
 	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="login.html">Login</a></li>
-			<li><a href="register.html">Registration</a></li>
-			<li><a href="information.html">Information</a></li>
-			<li><a href="news.html">News/Past Events</a></li>
-			<li><a href="help.html">Help Us</a></li>
-			<li><a href="donations.html">Donation</a></li>
-			<li><a href="jobs.html">Jobs</a></li>
-			<li><a href="contact.html">About Us</a></li>
-		</ul>
-	</nav>
+	<?php
+	session_start();
+	if (isset($_SESSION['SESS_USER'])) {
+		?>
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="php/logoutF.php">Logout</a></li>
+				<li><a href="register.html">Registration</a></li>
+				<li><a href="information.html">Information</a></li>
+				<li><a href="news.html">News/Past Events</a></li>
+				<li><a href="help.html">Help Us</a></li>
+				<li><a href="donations.html">Donation</a></li>
+				<li><a href="jobs.html">Jobs</a></li>
+				<li><a href="contact.html">About Us</a></li>
+			</ul>
+		</nav>
+		<?php
+
+	} else {
+		?>
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="register.html">Registration</a></li>
+				<li><a href="information.html">Information</a></li>
+				<li><a href="news.html">News/Past Events</a></li>
+				<li><a href="help.html">Help Us</a></li>
+				<li><a href="donations.html">Donation</a></li>
+				<li><a href="contact.html">About Us</a></li>
+			</ul>
+		</nav>
+		<?php
+	}
+	?>
 
 	<!-- Main -->
 	<section id="main">
