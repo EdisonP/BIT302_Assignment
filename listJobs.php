@@ -67,7 +67,7 @@
 					<form action="php/applyJobF.php" method="POST">
 						<label class = "col-md-3">Enter job's job ID</label>
 						<input class = "inp col-md-8" type = "text" name = "jobID" placeholder = "Enter job ID" required>
-						<br>
+						<input type = "hidden" name = "userID" value = <?php echo $_SESSION['SESS_USER']; ?>>
 						<input type = "submit" name = "submit" value = "Sign up for this job" />
 					</form>
 				</div>

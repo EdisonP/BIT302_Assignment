@@ -1,7 +1,7 @@
 <?php
 include 'DBConfig.php';
 
-$result = mysqli_query($conn,"SELECT * FROM jobs");
+$result = mysqli_query($conn,"SELECT * FROM jobs WHERE jobStatus = '0'");
 
 echo "<table border='1'>
 <tr>
