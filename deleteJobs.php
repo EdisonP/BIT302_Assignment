@@ -56,8 +56,7 @@
 <section id="main">
 	<div class="inner">
 		<h1>Delete job</h1>
-		<p>Please enter the job ID delete your job.</p>
-		<br>
+		<?php include 'php/listUserJobF.php';?>
 		<form action = "php/deleteJobF.php" method = "POST">
 		</br>
 		<b>Enter job ID to be deleted</b>
