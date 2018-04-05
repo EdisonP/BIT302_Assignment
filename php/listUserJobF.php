@@ -1,14 +1,13 @@
 <?php
 include 'DBConfig.php';
-
-$result = mysqli_query($conn,"SELECT * FROM jobs WHERE jobStatus = '0'");
+$jobClientID = $_SESSION['SESS_USER'];
+$result = mysqli_query($conn,"SELECT * FROM jobs WHERE  jobClientID = '$jobClientID'");
 
 echo "<table border='1'>
 <tr>
 <th>ID</th>
 <th>Job Name</th>
 <th>Job Details</th>
-<th>Client name</th>
 <th>Address</th>
 </tr>";
 
@@ -18,7 +17,6 @@ echo "<tr>";
 echo "<td>" . $row['jobID'] . "</td>";
 echo "<td>" . $row['jobName'] . "</td>";
 echo "<td>" . $row['jobDetails'] . "</td>";
-echo "<td>" . $row['jobClientName'] . "</td>";
 echo "<td>" . $row['address'] . "</td>";
 echo "</tr>";
 }

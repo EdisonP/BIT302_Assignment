@@ -59,17 +59,15 @@
 			<header>
 				<h1>List of jobs</h1>
 			</header>
-			<button id="myBtn">Apply Job</button>
+			<button id="myBtn">Select Job to Edit</button>
 			<div id="myModal" class="modal">
-
 				<div class="modal-content">
 					<span class="close">&times;</span>
-					<form action="php/applyJobF.php" method="POST">
+					<form action="editJobInfo.php" method="POST">
 						<label class = "col-md-3">Enter job's ID</label>
 						<input class = "inp col-md-8" type = "text" name = "jobID" placeholder = "Enter job ID" required>
-						<input type = "hidden" name = "userID" value = <?php echo $_SESSION['SESS_USER']; ?>>
 						</br>
-						<input type = "submit" name = "submit" value = "Sign up for this job" />
+						<input type = "submit" name = "submit" value = "Edit this job" />
 					</form>
 				</div>
 			</div>
@@ -89,7 +87,7 @@
 					}
 				}
 			</script>
-			<?php include 'php/listJobF.php';?>
+			<?php include 'php/listUserJobF.php';?>
 		</div>
 	</section>
 	<!-- Footer -->
