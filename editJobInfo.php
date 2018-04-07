@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Register</title>
+	<title>Edit Job</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -59,7 +59,7 @@
 	?>
 	<section id="main">
 		<div class="inner">
-			<h1>Sign Up</h1>
+			<h1>Edit Job</h1>
 			<p>Please fill in this form to edit the job.</p>
 			<br>
 			<form action = "php/editJobF.php" method = "POST">
