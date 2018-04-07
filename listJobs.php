@@ -35,7 +35,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="logo"><strong>Jinjang Utara</strong> Community</a>
+				<a href="index.php" class="logo"><strong>Jinjang Utara</strong> Community</a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
