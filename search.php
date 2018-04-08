@@ -1,6 +1,8 @@
 <?php
 	session_start();
-
+	include 'DBConfig.php';
+	$jobClientID = $_SESSION['SESS_USER'];
+	$result = mysqli_query($conn,"SELECT * FROM jobs WHERE  jobClientID = '$jobClientID'");
 	$search= $_GET['search']; 
 	
 	if($search == '') 
@@ -25,7 +27,7 @@
 			$servername= "localhost";
 			$username = "root";		
 			$password= "";
-			$dbname= "user";
+			$dbname= "jucommunity";
 			$con = new mysqli($servername,$username,$password,$dbname);
 				
 			$search_exploded = explode(" ", $search ); 
@@ -40,7 +42,7 @@
 					$construct.="AND pagecontent LIKE '%$search_each%'"; 
 			} 
 			
-			$construct= "SELECT * FROM searchEngine WHERE $construct"; 
+			$construct= "SELECT * FROM jobsearchengine WHERE $construct"; 
 			$run=mysqli_query($con,$construct); 
 			
 			$foundnum=mysqli_num_rows($run); 
@@ -63,11 +65,13 @@
 				echo "$foundnum results found !<p>";
 				while( $runrows = mysqli_fetch_assoc($run))
 					{
-						$title =$runrows['title']; 
-						$url =$runrows['pageurl'];
-						
-						echo "<a href='$url'> <b> $title
-						<br> <a href='$url'>$url </a> <p>"; 
+						echo "<table border='1'>
+						<tr>
+						<th>ID</th>
+						<th>Job Name</th>
+						<th>Job Details</th>
+						<th>Address</th>
+						</tr>"; 
 					}
 					echo "
 					<html>
