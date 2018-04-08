@@ -9,7 +9,7 @@ session_start();
 -->
 <html>
 <head>
-	<title>Search Results</title>
+	<title>Accept Jobs</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,26 +46,33 @@ session_start();
 	<!-- Main -->
 	<section id="main">
 		<div class="inner">
+		<div class="col-md-10 well admin-content" id="jobs">
 			<h1>Requested Jobs</h1>
 			
 			<?php 
 			$con = mysqli_connect("localhost","root","","jucommunity");
 			$result = mysqli_query($con,"SELECT * FROM jobapplication");
-			echo "<table border='1'>
+			
+			$i = 1;
+			echo "<form action='accept.php' method='post'>";
+			echo "<table class='table table-responsive'>
 				<tr>
 				<th>Job App ID</th>
 				<th>User ID</th>
 				<th>Job ID</th>
 				<th>Date Applied</th>
+				<th>Status</th>
 				</tr>";
 
 			while($row = mysqli_fetch_array($result))
 			{
+			$uname = $row['jobAppID'];
 			echo "<tr>";
 			echo "<td>" . $row['jobAppID'] . "</td>";
 			echo "<td>" . $row['userID'] . "</td>";
 			echo "<td>" . $row['jobID'] . "</td>";
 			echo "<td>" . $row['date'] . "</td>";
+			echo "<td>" . $row['status'] . "</td>";
 			echo "</tr>";
 			}
 			?>
@@ -74,7 +81,6 @@ session_start();
 			echo "<td><input type='radio' name=\"a$uname\" value='decline'/>Decline</td>";
 			echo "<td><input type='radio' name=\"a$uname\" value='approved'/>Approved</td>";
 			echo "</tr>";
-			}
 			echo '<input style="float:right;" type="submit" name="ApproveSelected" value="Approve Selected" />';
 			echo "</table>";
 			?>
@@ -82,6 +88,7 @@ session_start();
 			<?php
 			mysqli_close($con);
 			?>
+			</div>
 		</div>
 	</section>
 
