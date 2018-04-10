@@ -1,9 +1,7 @@
 <?php
 	session_start();
-	include 'DBConfig.php';
-	$jobClientID = $_SESSION['SESS_USER'];
-	$result = mysqli_query($conn,"SELECT * FROM jobs WHERE  jobClientID = '$jobClientID'");
-	$search= $_GET['search']; 
+
+	$search= $_GET['search'];
 	
 	if($search == '') 
 		echo "you didn't submit a keyword"; 
