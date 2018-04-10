@@ -44,15 +44,37 @@
 	<section id="main">
 		<div class="inner">
 			<h1>Search results</h1>
-			<?php session_start();
-			include 'search.php';
-			?>
-		</form>
-	</div>
-</section>
+			
+			<?php 
+			$con = mysqli_connect("localhost","root","","jucommunity");
+			$result = mysqli_query($con,"SELECT * FROM searchengine");
+			echo "<table border='1'>
+				<tr>
+				<th>ID</th>
+				<th>Job Name</th>
+				<th>Job Details</th>
+				<th>Client name</th>
+				<th>Address</th>
+				</tr>";
 
-<!-- Footer -->
-<footer id="footer">
+			while($row = mysqli_fetch_array($result))
+			{
+			echo "<tr>";
+			echo "<td>" . $row['jobID'] . "</td>";
+			echo "<td>" . $row['jobName'] . "</td>";
+			echo "<td>" . $row['jobDetails'] . "</td>";
+			echo "<td>" . $row['jobClientName'] . "</td>";
+			echo "<td>" . $row['address'] . "</td>";
+			echo "</tr>";
+			}
+			echo "</table>";
+			mysqli_close($con);
+			?>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
 	<ul class="icons">
 		<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 		<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -61,7 +83,7 @@
 	<div class="copyright">
 		&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
 	</div>
-</footer>
+	</footer>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
