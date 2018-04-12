@@ -15,6 +15,5 @@ if(isset($_POST['ApproveSelected'])){
 		mysqli_query($con,$sql2);
 		header("location:acceptJobs.php");
 	}
-	
 }
 ?>

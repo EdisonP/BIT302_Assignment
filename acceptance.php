@@ -8,10 +8,7 @@ session_start();
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="assignment.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"></link>
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
@@ -39,11 +36,24 @@ session_start();
 	</nav>
 	
 	<!-- Main -->
-	<section id="main">
-		<div class="container">
-		<div class="col-md-10 well admin-content" id="jobs">
-		<table class="table2" id="table2" >
-			<h1>Requested Jobs</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked admin-menu">
+                <li class="active"><a href="#" data-target-id="events"><i class="fa fa-home fa-fw"></i>Events</a></li>
+                <li><a href="#" data-target-id="user"><i class="fa fa-list-alt fa-fw"></i>User Profile</a></li>
+                <li><a href="#" data-target-id="enquiry"><i class="fa fa-file-o fa-fw"></i>Enquiry</a></li>
+                <li><a href="#" data-target-id="settings"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 well admin-content" id="events">
+        <table class="table" id="table" >
+            Events
+        </table>
+        </div>
+        <div class="col-md-10 well admin-content" id="user">
+            <table class="table2" id="table2" >
+            <h1>Requested Jobs</h1>
 			
 			<?php 
 			$con = mysqli_connect("localhost","root","","jucommunity");
@@ -84,10 +94,16 @@ session_start();
 			<?php
 			mysqli_close($con);
 			?>
-		</table>
-		</div>
-		</div>
-	</section>
+			</table>
+        </div>
+        <div class="col-md-10 well admin-content" id="enquiry">
+            Enquiry
+        </div>
+        <div class="col-md-10 well admin-content" id="settings">
+            Settings
+        </div>
+    </div>
+</div>
 
 	<!-- Footer -->
 	<footer id="footer">
@@ -107,6 +123,5 @@ session_start();
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-<script src="admin.js"></script>
 </body>
 </html>
